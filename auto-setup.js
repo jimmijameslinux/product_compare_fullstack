@@ -5,8 +5,8 @@ import os from "os";
 import path from "path";
 
 // UPDATE THESE PATHS
-const FRONTEND_PATH = "./frontend";   
-const BACKEND_PATH = "./backend";
+const FRONTEND_PATH = "./product_frontend";   
+const BACKEND_PATH = "./product_backend";
 
 // --------------------------------------------------
 // EXEC HELPER (Promise-based)

@@ -1,0 +1,823 @@
+{
+  "brands": {
+    "Apple": {
+      "brand_name": "Apple",
+      "country": "USA",
+      "models": [
+        {
+          "id": 1,
+          "model": "iPhone 15 Pro Max",
+          "year": 2023,
+          "ram_gb": [8],
+          "storage_options": ["256GB", "512GB", "1TB"],
+          "colors": ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"],
+          "price_usd": 1199
+        },
+        {
+          "id": 2,
+          "model": "iPhone 15 Pro",
+          "year": 2023,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+          "colors": ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"],
+          "price_usd": 999
+        },
+        {
+          "id": 3,
+          "model": "iPhone 15 Plus",
+          "year": 2023,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Black", "Blue", "Green", "Yellow", "Pink"],
+          "price_usd": 899
+        },
+        {
+          "id": 4,
+          "model": "iPhone 15",
+          "year": 2023,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Black", "Blue", "Green", "Yellow", "Pink"],
+          "price_usd": 799
+        },
+        {
+          "id": 5,
+          "model": "iPhone 14 Pro Max",
+          "year": 2022,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+          "colors": ["Deep Purple", "Gold", "Silver", "Space Black"],
+          "price_usd": 1099
+        },
+        {
+          "id": 6,
+          "model": "iPhone 14 Pro",
+          "year": 2022,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+          "colors": ["Deep Purple", "Gold", "Silver", "Space Black"],
+          "price_usd": 999
+        },
+        {
+          "id": 7,
+          "model": "iPhone 14 Plus",
+          "year": 2022,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Midnight", "Purple", "Starlight", "Blue", "Red"],
+          "price_usd": 899
+        },
+        {
+          "id": 8,
+          "model": "iPhone 14",
+          "year": 2022,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Midnight", "Purple", "Starlight", "Blue", "Red"],
+          "price_usd": 799
+        },
+        {
+          "id": 9,
+          "model": "iPhone 13 Pro Max",
+          "year": 2021,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+          "colors": ["Graphite", "Gold", "Silver", "Sierra Blue"],
+          "price_usd": 1099
+        },
+        {
+          "id": 10,
+          "model": "iPhone 13 Pro",
+          "year": 2021,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+          "colors": ["Graphite", "Gold", "Silver", "Sierra Blue"],
+          "price_usd": 999
+        },
+        {
+          "id": 11,
+          "model": "iPhone 13",
+          "year": 2021,
+          "ram_gb": [4],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Midnight", "Starlight", "Blue", "Pink", "Red", "Green"],
+          "price_usd": 699
+        },
+        {
+          "id": 12,
+          "model": "iPhone 13 mini",
+          "year": 2021,
+          "ram_gb": [4],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Midnight", "Starlight", "Blue", "Pink", "Red", "Green"],
+          "price_usd": 599
+        },
+        {
+          "id": 13,
+          "model": "iPhone 12 Pro Max",
+          "year": 2020,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Graphite", "Silver", "Gold", "Pacific Blue"],
+          "price_usd": 1099
+        },
+        {
+          "id": 14,
+          "model": "iPhone 12 Pro",
+          "year": 2020,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Graphite", "Silver", "Gold", "Pacific Blue"],
+          "price_usd": 999
+        },
+        {
+          "id": 15,
+          "model": "iPhone 12",
+          "year": 2020,
+          "ram_gb": [4],
+          "storage_options": ["64GB", "128GB", "256GB"],
+          "colors": ["Black", "White", "Red", "Green", "Blue", "Purple"],
+          "price_usd": 799
+        },
+        {
+          "id": 16,
+          "model": "iPhone 12 mini",
+          "year": 2020,
+          "ram_gb": [4],
+          "storage_options": ["64GB", "128GB", "256GB"],
+          "colors": ["Black", "White", "Red", "Green", "Blue", "Purple"],
+          "price_usd": 699
+        },
+        {
+          "id": 17,
+          "model": "iPhone SE (3rd generation)",
+          "year": 2022,
+          "ram_gb": [3],
+          "storage_options": ["64GB", "128GB", "256GB"],
+          "colors": ["Midnight", "Starlight", "Red"],
+          "price_usd": 429
+        },
+        {
+          "id": 18,
+          "model": "iPhone SE (2nd generation)",
+          "year": 2020,
+          "ram_gb": [3],
+          "storage_options": ["64GB", "128GB", "256GB"],
+          "colors": ["Black", "White", "Red"],
+          "price_usd": 399
+        },
+        {
+          "id": 19,
+          "model": "iPhone 11 Pro Max",
+          "year": 2019,
+          "ram_gb": [4],
+          "storage_options": ["64GB", "256GB", "512GB"],
+          "colors": ["Space Gray", "Silver", "Gold", "Midnight Green"],
+          "price_usd": 1099
+        },
+        {
+          "id": 20,
+          "model": "iPhone 11 Pro",
+          "year": 2019,
+          "ram_gb": [4],
+          "storage_options": ["64GB", "256GB", "512GB"],
+          "colors": ["Space Gray", "Silver", "Gold", "Midnight Green"],
+          "price_usd": 999
+        }
+      ]
+    },
+    "Samsung": {
+      "brand_name": "Samsung",
+      "country": "South Korea",
+      "models": [
+        {
+          "id": 30,
+          "model": "Galaxy S24 Ultra",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB", "1TB"],
+          "colors": ["Titanium Black", "Titanium Gray", "Titanium Violet", "Titanium Yellow"],
+          "price_usd": 1299
+        },
+        {
+          "id": 31,
+          "model": "Galaxy S24+",
+          "year": 2024,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Onyx Black", "Marble Gray", "Cobalt Violet", "Amber Yellow"],
+          "price_usd": 999
+        },
+        {
+          "id": 32,
+          "model": "Galaxy S24",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Onyx Black", "Marble Gray", "Cobalt Violet", "Amber Yellow"],
+          "price_usd": 799
+        },
+        {
+          "id": 33,
+          "model": "Galaxy S23 Ultra",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB", "1TB"],
+          "colors": ["Phantom Black", "Green", "Cream", "Lavender"],
+          "price_usd": 1199
+        },
+        {
+          "id": 34,
+          "model": "Galaxy S23+",
+          "year": 2023,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Phantom Black", "Cream", "Green", "Lavender"],
+          "price_usd": 999
+        },
+        {
+          "id": 35,
+          "model": "Galaxy S23",
+          "year": 2023,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Phantom Black", "Cream", "Green", "Lavender"],
+          "price_usd": 799
+        },
+        {
+          "id": 36,
+          "model": "Galaxy S22 Ultra",
+          "year": 2022,
+          "ram_gb": [12],
+          "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+          "colors": ["Phantom Black", "Phantom White", "Green", "Burgundy"],
+          "price_usd": 1199
+        },
+        {
+          "id": 37,
+          "model": "Galaxy S22+",
+          "year": 2022,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Phantom Black", "Phantom White", "Green", "Pink Gold"],
+          "price_usd": 999
+        },
+        {
+          "id": 38,
+          "model": "Galaxy S22",
+          "year": 2022,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Phantom Black", "Phantom White", "Green", "Pink Gold"],
+          "price_usd": 799
+        },
+        {
+          "id": 39,
+          "model": "Galaxy Z Fold 5",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB", "1TB"],
+          "colors": ["Phantom Black", "Cream", "Icy Blue"],
+          "price_usd": 1799
+        },
+        {
+          "id": 40,
+          "model": "Galaxy Z Fold 4",
+          "year": 2022,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB", "1TB"],
+          "colors": ["Graygreen", "Phantom Black", "Beige"],
+          "price_usd": 1799
+        },
+        {
+          "id": 41,
+          "model": "Galaxy Z Flip 5",
+          "year": 2023,
+          "ram_gb": [8],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Mint", "Graphite", "Cream", "Lavender"],
+          "price_usd": 999
+        },
+        {
+          "id": 42,
+          "model": "Galaxy Z Flip 4",
+          "year": 2022,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Bora Purple", "Graphite", "Pink Gold", "Blue"],
+          "price_usd": 999
+        },
+        {
+          "id": 43,
+          "model": "Galaxy A54 5G",
+          "year": 2023,
+          "ram_gb": [6, 8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Awesome Graphite", "Awesome Violet", "Awesome Lime", "Awesome White"],
+          "price_usd": 449
+        },
+        {
+          "id": 44,
+          "model": "Galaxy A34 5G",
+          "year": 2023,
+          "ram_gb": [6],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Awesome Graphite", "Awesome Violet", "Awesome Lime", "Awesome Silver"],
+          "price_usd": 369
+        },
+        {
+          "id": 45,
+          "model": "Galaxy A14 5G",
+          "year": 2023,
+          "ram_gb": [4, 6],
+          "storage_options": ["64GB", "128GB"],
+          "colors": ["Black", "Dark Red", "Silver", "Light Green"],
+          "price_usd": 199
+        }
+      ]
+    },
+    "Google": {
+      "brand_name": "Google",
+      "country": "USA",
+      "models": [
+        {
+          "id": 58,
+          "model": "Pixel 8 Pro",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Obsidian", "Porcelain", "Bay"],
+          "price_usd": 999
+        },
+        {
+          "id": 59,
+          "model": "Pixel 8",
+          "year": 2023,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Obsidian", "Hazel", "Rose"],
+          "price_usd": 699
+        },
+        {
+          "id": 60,
+          "model": "Pixel 7 Pro",
+          "year": 2022,
+          "ram_gb": [12],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Obsidian", "Snow", "Hazel"],
+          "price_usd": 899
+        },
+        {
+          "id": 61,
+          "model": "Pixel 7",
+          "year": 2022,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Obsidian", "Snow", "Lemongrass"],
+          "price_usd": 599
+        },
+        {
+          "id": 62,
+          "model": "Pixel 7a",
+          "year": 2023,
+          "ram_gb": [6],
+          "storage_options": ["128GB"],
+          "colors": ["Charcoal", "Sea", "Snow", "Coral"],
+          "price_usd": 499
+        },
+        {
+          "id": 63,
+          "model": "Pixel 6 Pro",
+          "year": 2021,
+          "ram_gb": [12],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Stormy Black", "Cloudy White", "Sorta Sunny"],
+          "price_usd": 899
+        },
+        {
+          "id": 64,
+          "model": "Pixel 6",
+          "year": 2021,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Stormy Black", "Sorta Seafoam", "Kinda Coral"],
+          "price_usd": 599
+        }
+      ]
+    },
+    "OnePlus": {
+      "brand_name": "OnePlus",
+      "country": "China",
+      "models": [
+        {
+          "id": 70,
+          "model": "OnePlus 12",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Flowy Emerald", "Silky Black"],
+          "price_usd": 799
+        },
+        {
+          "id": 71,
+          "model": "OnePlus 12R",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Cool Black", "Warm Black"],
+          "price_usd": 499
+        },
+        {
+          "id": 72,
+          "model": "OnePlus 11",
+          "year": 2023,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Titan Black", "Eternal Green"],
+          "price_usd": 699
+        },
+        {
+          "id": 73,
+          "model": "OnePlus 10 Pro",
+          "year": 2022,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Volcanic Black", "Emerald Forest"],
+          "price_usd": 899
+        },
+        {
+          "id": 74,
+          "model": "OnePlus 9 Pro",
+          "year": 2021,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Morning Mist", "Pine Green", "Stellar Black"],
+          "price_usd": 969
+        },
+        {
+          "id": 75,
+          "model": "OnePlus Nord 3",
+          "year": 2023,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Misty Green", "Tempest Gray"],
+          "price_usd": 499
+        },
+        {
+          "id": 76,
+          "model": "OnePlus Nord 2T",
+          "year": 2022,
+          "ram_gb": [6, 8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Gray Shadow", "Jade Fog"],
+          "price_usd": 399
+        }
+      ]
+    },
+    "Xiaomi": {
+      "brand_name": "Xiaomi",
+      "country": "China",
+      "models": [
+        {
+          "id": 81,
+          "model": "14 Ultra",
+          "year": 2024,
+          "ram_gb": [16],
+          "storage_options": ["512GB", "1TB"],
+          "colors": ["Black", "White"],
+          "price_usd": 1299
+        },
+        {
+          "id": 82,
+          "model": "14 Pro",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "White", "Titanium"],
+          "price_usd": 899
+        },
+        {
+          "id": 83,
+          "model": "14",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "White", "Jade Green"],
+          "price_usd": 799
+        },
+        {
+          "id": 84,
+          "model": "13 Ultra",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "Olive Green"],
+          "price_usd": 1199
+        },
+        {
+          "id": 85,
+          "model": "13 Pro",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Ceramic White", "Ceramic Black", "Flora Green"],
+          "price_usd": 999
+        },
+        {
+          "id": 86,
+          "model": "13T Pro",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Meadow Green", "Black"],
+          "price_usd": 799
+        },
+        {
+          "id": 87,
+          "model": "Redmi Note 13 Pro+",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Midnight Black", "Aurora Purple", "Ocean Teal"],
+          "price_usd": 399
+        },
+        {
+          "id": 88,
+          "model": "Redmi Note 13 Pro",
+          "year": 2023,
+          "ram_gb": [6, 8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Midnight Black", "Ocean Teal", "Prism Gold"],
+          "price_usd": 349
+        },
+        {
+          "id": 89,
+          "model": "Redmi Note 13",
+          "year": 2023,
+          "ram_gb": [4, 6, 8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Midnight Black", "Blue", "White", "Silver"],
+          "price_usd": 249
+        },
+        {
+          "id": 90,
+          "model": "Poco X6 Pro",
+          "year": 2024,
+          "ram_gb": [12],
+          "storage_options": ["512GB"],
+          "colors": ["Black", "White"],
+          "price_usd": 599
+        },
+        {
+          "id": 91,
+          "model": "Poco X6",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "Silver", "Green"],
+          "price_usd": 449
+        }
+      ]
+    },
+    "OPPO": {
+      "brand_name": "OPPO",
+      "country": "China",
+      "models": [
+        {
+          "id": 100,
+          "model": "Find X8 Pro",
+          "year": 2024,
+          "ram_gb": [16],
+          "storage_options": ["512GB"],
+          "colors": ["Titanium Black", "Titanium White", "Titanium Gray"],
+          "price_usd": 1299
+        },
+        {
+          "id": 101,
+          "model": "Find X8",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Titanium Black", "Titanium White"],
+          "price_usd": 899
+        },
+        {
+          "id": 102,
+          "model": "Find N3 Flip",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "White", "Purple"],
+          "price_usd": 1099
+        },
+        {
+          "id": 103,
+          "model": "Find X7 Ultra",
+          "year": 2023,
+          "ram_gb": [12, 16],
+          "storage_options": ["512GB", "1TB"],
+          "colors": ["Black", "White"],
+          "price_usd": 1199
+        },
+        {
+          "id": 104,
+          "model": "Reno 11 Pro 5G",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Starry Black", "Starry Purple", "Starry White"],
+          "price_usd": 599
+        },
+        {
+          "id": 105,
+          "model": "Reno 11 5G",
+          "year": 2024,
+          "ram_gb": [8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Black", "White", "Blue"],
+          "price_usd": 449
+        },
+        {
+          "id": 106,
+          "model": "K12",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "Gray", "Blue"],
+          "price_usd": 449
+        },
+        {
+          "id": 107,
+          "model": "A98",
+          "year": 2023,
+          "ram_gb": [8],
+          "storage_options": ["256GB"],
+          "colors": ["Black", "White", "Blue"],
+          "price_usd": 349
+        }
+      ]
+    },
+    "Vivo": {
+      "brand_name": "Vivo",
+      "country": "China",
+      "models": [
+        {
+          "id": 108,
+          "model": "X200 Pro",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["512GB"],
+          "colors": ["Black", "White", "Blue"],
+          "price_usd": 1099
+        },
+        {
+          "id": 109,
+          "model": "X200",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "White", "Green"],
+          "price_usd": 899
+        },
+        {
+          "id": 110,
+          "model": "X100 Ultra",
+          "year": 2024,
+          "ram_gb": [16],
+          "storage_options": ["512GB", "1TB"],
+          "colors": ["Black", "White"],
+          "price_usd": 1399
+        },
+        {
+          "id": 111,
+          "model": "X100",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "White", "Gold"],
+          "price_usd": 799
+        },
+        {
+          "id": 112,
+          "model": "V40 Pro",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "Gray", "White"],
+          "price_usd": 699
+        },
+        {
+          "id": 113,
+          "model": "V40",
+          "year": 2024,
+          "ram_gb": [12],
+          "storage_options": ["128GB", "256GB", "512GB"],
+          "colors": ["Black", "Blue", "White"],
+          "price_usd": 599
+        },
+        {
+          "id": 114,
+          "model": "Y200 5G",
+          "year": 2024,
+          "ram_gb": [6, 8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Black", "Blue", "White"],
+          "price_usd": 299
+        },
+        {
+          "id": 115,
+          "model": "Y100",
+          "year": 2024,
+          "ram_gb": [4, 6, 8],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Black", "White", "Blue", "Purple"],
+          "price_usd": 179
+        }
+      ]
+    },
+    "Motorola": {
+      "brand_name": "Motorola",
+      "country": "USA",
+      "models": [
+        {
+          "id": 116,
+          "model": "Edge 50 Pro",
+          "year": 2024,
+          "ram_gb": [12],
+          "storage_options": ["512GB"],
+          "colors": ["Midnight Blue", "Moon Gray"],
+          "price_usd": 799
+        },
+        {
+          "id": 117,
+          "model": "Edge 50",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Midnight Blue", "Forest Green", "Pale Lilac"],
+          "price_usd": 499
+        },
+        {
+          "id": 118,
+          "model": "Edge 40 Pro",
+          "year": 2023,
+          "ram_gb": [12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Midnight Blue", "Lunar Gray"],
+          "price_usd": 749
+        },
+        {
+          "id": 119,
+          "model": "Edge 40",
+          "year": 2023,
+          "ram_gb": [8, 12],
+          "storage_options": ["128GB", "256GB"],
+          "colors": ["Midnight Blue", "Moonlight Gray", "Solar Red"],
+          "price_usd": 499
+        },
+        {
+          "id": 120,
+          "model": "Razr 50 Ultra",
+          "year": 2024,
+          "ram_gb": [12],
+          "storage_options": ["512GB"],
+          "colors": ["Black", "Purple"],
+          "price_usd": 999
+        },
+        {
+          "id": 121,
+          "model": "Razr 50",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "Silver", "Gold"],
+          "price_usd": 799
+        }
+      ]
+    },
+    "Realme": {
+      "brand_name": "Realme",
+      "country": "China",
+      "models": [
+        {
+          "id": 122,
+          "model": "GT 7 Pro",
+          "year": 2024,
+          "ram_gb": [12, 16],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "White"],
+          "price_usd": 799
+        },
+        {
+          "id": 123,
+          "model": "GT 7",
+          "year": 2024,
+          "ram_gb": [8, 12],
+          "storage_options": ["256GB", "512GB"],
+          "colors": ["Black", "Blue", "Green"],
+            "price_usd": 599
+        }
+      ]
+    }
+  }
+}

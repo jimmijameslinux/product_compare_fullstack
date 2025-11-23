@@ -2,6 +2,7 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 import dotenv from "dotenv";
 // import fs from "fs";
+import {isIrrelevantProduct} from "./filterUtils.js";
 
 dotenv.config();
 // import fs from "fs";
@@ -37,30 +38,30 @@ function extractLID(url) {
 // --------------------------------------------------------------
 // EXTRACT PAGE URI FROM FULL FLIPKART URL
 // --------------------------------------------------------------
-function extractPageUri(fullUrl) {
-    try {
-        const u = new URL(fullUrl);
-        return u.pathname + (u.search || "");
-    } catch {
-        return null;
-    }
-}
+// function extractPageUri(fullUrl) {
+//     try {
+//         const u = new URL(fullUrl);
+//         return u.pathname + (u.search || "");
+//     } catch {
+//         return null;
+//     }
+// }
 
 // --------------------------------------------------------------
 // SIMPLE MATCH SCORE (for ranking search results)
 // --------------------------------------------------------------
-function simpleMatchScore(title, query) {
-    title = title.toLowerCase();
-    query = query.toLowerCase();
+// function simpleMatchScore(title, query) {
+//     title = title.toLowerCase();
+//     query = query.toLowerCase();
 
-    let score = 0;
+//     let score = 0;
 
-    query.split(" ").forEach((q) => {
-        if (title.includes(q)) score += 1;
-    });
+//     query.split(" ").forEach((q) => {
+//         if (title.includes(q)) score += 1;
+//     });
 
-    return score / query.split(" ").length;
-}
+//     return score / query.split(" ").length;
+// }
 
 // --------------------------------------------------------------
 // SCRAPE SEARCH RESULTS
@@ -99,6 +100,11 @@ async function scrapeFlipkartRequest(query) {
 
     const list = await scrapeFlipkartSearch(query);
 
+    // Filter out irrelevant products
+    const filtered = list.filter(
+        (item) => !isIrrelevantProduct(item.title)
+    );
+
     // const scored = list.map((x) => ({
     //     ...x,
     //     matchScore: simpleMatchScore(x.title, query),
@@ -106,9 +112,9 @@ async function scrapeFlipkartRequest(query) {
 
     // const sorted = scored.sort((a, b) => b.matchScore - a.matchScore);
 
-    console.log("🔹 Flipkart Search Results:", list[0]);
+    console.log("🔹 Flipkart Search filtered Results:", filtered);
 
-    return list[0] || null;
+    return filtered[0] || null;
 }
 
 // --------------------------------------------------------------
@@ -244,29 +250,29 @@ async function removeAllFromCart() {
 // --------------------------------------------------------------
 // 🆕 ADD TO CART
 // --------------------------------------------------------------
-async function addToCart(PID, LID) {
-    try {
-        console.log("\n🛒 Adding product to cart...");
+// async function addToCart(PID, LID) {
+//     try {
+//         console.log("\n🛒 Adding product to cart...");
 
-        const payload = {
-            productId: PID,
-            listingId: LID,
-            quantity: 1,
-            context: {
-                pageType: "ProductPage",
-            },
-        };
+//         const payload = {
+//             productId: PID,
+//             listingId: LID,
+//             quantity: 1,
+//             context: {
+//                 pageType: "ProductPage",
+//             },
+//         };
 
-        const res = await flipkartAPI.post("/api/4/cart/add", payload);
-        console.log("✅ Product added to cart");
-        return res.data;
+//         const res = await flipkartAPI.post("/api/4/cart/add", payload);
+//         console.log("✅ Product added to cart");
+//         return res.data;
 
-    } catch (err) {
-        console.log("⚠️  Add to cart error:", err.message);
-        // Try alternative method
-        return null;
-    }
-}
+//     } catch (err) {
+//         console.log("⚠️  Add to cart error:", err.message);
+//         // Try alternative method
+//         return null;
+//     }
+// }
 
 
 async function checkout(PID, LID, price) {
@@ -436,7 +442,7 @@ export async function scrapeFlipkartFull(query) {
 
         const PID = extractPID(best.link);
         const LID = extractLID(best.link);
-        const pageUri = extractPageUri(best.link);
+        // const pageUri = extractPageUri(best.link);
         const price = parseInt(best.price.replace(/[₹,]/g, ""));
 
         const offers = await extractOffersFromProductPage(best.link);

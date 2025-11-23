@@ -42,6 +42,8 @@ export const scrapeAmazonRequest = async (query) => {
       }
     }
 
+    console.log(`🛒 Amazon Scraped Items Count: ${scrapedData.length}`);
+
     if (!scrapedData.length) return null;
 
     // BEST MATCH FINDING
@@ -51,6 +53,9 @@ export const scrapeAmazonRequest = async (query) => {
     }));
 
     const valid = filterValidPhones(ranked).sort((a, b) => b.matchScore - a.matchScore);
+    // const filtered = scrapedData.filter(
+    //     (item) => !isIrrelevantProduct(item.title)
+    // );
     const bestMatch = valid[0];
 
     if (!bestMatch) return null;
@@ -66,6 +71,61 @@ export const scrapeAmazonRequest = async (query) => {
         "Mozilla/5.0 (Linux; Android 10; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.110 Mobile Safari/537.36",
       "Accept-Language": "en-IN,en;q=0.9",
     };
+
+    const amazonAPI = axios.create({
+      baseURL: "https://www.amazon.in",
+      headers: {
+        Accept: "*/*",
+        "Content-Type": "application/json",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "User-Agent":
+          "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+        "X-User-Agent":
+          "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+        Origin: "https://www.amazon.in",
+        Referer: "https://www.amazon.in/",
+      },
+    });
+
+    let sid = process.env.AMZ_SESSION_ID || "";
+    let sidt = process.env.AMZ_SESSION_ID_TIME || "";
+    let st = process.env.AMZ_SESSION_TOKEN || "";
+    let ubid = process.env.AMZ_UBID || "";
+    // let atbin = process.env.AMZ_AT_ACBIN || "";
+    // let satbin = process.env.AMZ_SESS_AT_ACBIN || "";
+    // let xbin = process.env.AMZ_X_ACBIN || "";
+
+    amazonAPI.defaults.headers.Cookie = `
+    session-id=${sid};
+    session-id-time=${sidt};
+    session-token=${st};
+    ubid-acbin=${ubid};
+    `
+      .replace(/\n/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    function refreshSessionCookies() {
+      const timestamp = Date.now();
+
+      console.log("\n🔄 Refreshing session cookies...");
+
+      // Get current cookies
+      let currentCookies = amazonAPI.defaults.headers.Cookie;
+
+      // Update session-specific cookies to force fresh session
+      // Note: We keep at, rt, ud (auth) but refresh S, SN, vd (session)
+      currentCookies = currentCookies
+        .replace(/session-token=[^;]+/, `session-token=fresh_${timestamp}`)
+      // .replace(/SN=[^;]+/, `SN=VIE${timestamp}.TOK${timestamp}.${timestamp}.LI`)
+      // .replace(/vd=[^;]+/, `vd=VIE${timestamp}-${timestamp}-1.${timestamp}.${timestamp}.${timestamp}`);
+
+      amazonAPI.defaults.headers.Cookie = currentCookies;
+
+      console.log("✅ Session cookies refreshed");
+    }
+
+    refreshSessionCookies()
 
     console.log("🔁 Fetching product page:", bestMatch.link);
 
@@ -107,7 +167,7 @@ export const scrapeAmazonRequest = async (query) => {
         if (className.includes("CASHBACK")) {
           cashback.push({
             provider,
-            amount:parseInt(amount.replace(/[₹,]/g, ""), 10),
+            amount: parseInt(amount.replace(/[₹,]/g, ""), 10),
           });
           continue; // ⛔ ensure it does NOT go to offers[]
         }
@@ -127,8 +187,8 @@ export const scrapeAmazonRequest = async (query) => {
     bestMatch.cashback = cashback;
     bestMatch.price = parseInt(bestMatch.price.replace(/[₹,]/g, ""), 10);
 
-    console.log("Provider Offers Found:", offers);
-    console.log("Cashback Offers Found:", cashback);
+    // console.log("Provider Offers Found:", offers);
+    // console.log("Cashback Offers Found:", cashback);
 
     return bestMatch;
   } catch (err) {

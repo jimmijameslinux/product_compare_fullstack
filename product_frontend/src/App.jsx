@@ -6,6 +6,7 @@ import SearchBar from "./components/SearchBar";
 function App() {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState("");
+  const [searchquery, setSearchquery] = useState("");
   const [loading, setLoading] = useState(false);
 
   return (
@@ -59,11 +60,11 @@ function App() {
 
         {/* Search Section */}
         <div className="max-w-3xl mx-auto mb-16">
-          <SearchBar setProducts={setProducts} setQuery={setQuery} query={query} setLoading={setLoading} loading={loading} />
+          <SearchBar setProducts={setProducts} setQuery={setQuery} query={query} setSearchquery={setSearchquery} setLoading={setLoading} loading={loading} />
         </div>
 
         {/* Products Grid */}
-        <ProductList products={products} query={query} loading={loading} />
+        <ProductList products={products} query={query} searchquery={searchquery} loading={loading} />
       </div>
     </div>
   );

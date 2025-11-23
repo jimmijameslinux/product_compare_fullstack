@@ -1,6 +1,6 @@
 import { TrendingDown } from 'lucide-react';
 
-function ProductList({ products, query, loading }) {
+function ProductList({ products, query, searchquery, loading }) {
   if (loading) {
     return (
       <div className="mt-1 w-full flex items-center">
@@ -57,7 +57,7 @@ function ProductList({ products, query, loading }) {
     <div className="mt-1 w-full flex flex-col items-center">
       {!loading && (
         <h2 className="text-lg font-semibold text-gray-800 mt-4" style={{ color: '#00ffdd', fontFamily: 'monospace', letterSpacing: '0.05em' }}>
-          {`Results for: "${query}"`}
+          {`Results for: "${searchquery}"`}
         </h2>
       )}
       {/* No changes needed here */}
@@ -75,7 +75,7 @@ function ProductList({ products, query, loading }) {
               className="p-6 rounded-3xl transition-all duration-300 hover:scale-105"
               style={{
                 backgroundColor: 'rgba(0, 50, 30, 0.4)',
-                border: '3px solid #00ff9d',
+                border: '3px solid rgb(0, 255, 221)',
                 borderRadius: '30px',
                 boxShadow: isLowest ? '0 0 30px rgba(255, 150, 0, 0.6), inset 0 0 30px rgba(0, 255, 157, 0.1)' : '0 0 30px rgba(0, 255, 157, 0.4), inset 0 0 30px rgba(0, 255, 157, 0.1)',
                 backdropFilter: 'blur(10px)',
@@ -199,7 +199,7 @@ function ProductList({ products, query, loading }) {
                     >
                       Available Offers:
                     </p>
-                    <div className="space-y-1 max-h-32 overflow-y-auto">
+                    <div className="space-y-1 overflow-y-auto">
                     {p.offers.map((offer, idx) => {
                       const finalPrice = offer.discountAmount || 0;
                       return (
@@ -232,7 +232,7 @@ function ProductList({ products, query, loading }) {
                     >
                       Available Cashbacks:
                     </p>
-                    <div className="space-y-1 max-h-32 overflow-y-auto">
+                    <div className="space-y-1 overflow-y-auto">
                     {p.cashback.map((cb, idx) => {
                       return (
                         <div

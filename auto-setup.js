@@ -144,8 +144,8 @@ async function main() {
         // ----------------------------------------
         console.log("\n📌 Starting frontend (npm run dev)...");
         const devCommands = os.platform() === "win32"
-            ? ["npm run dev"]
-            : ["npm run dev", "sudo npm run dev"];
+            ? ["npm run host"]
+            : ["npm run host", "sudo npm run host"];
 
         await tryCommands(devCommands, FRONTEND_PATH);
 

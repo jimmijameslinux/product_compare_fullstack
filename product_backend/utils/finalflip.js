@@ -1,7 +1,6 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 import dotenv from "dotenv";
-// import fs from "fs";
 import {isIrrelevantProduct} from "./filterUtils.js";
 
 dotenv.config();
@@ -70,14 +69,15 @@ async function scrapeFlipkartSearch(query) {
     const url = `https://www.flipkart.com/search?q=${encodeURIComponent(query)}`;
     const res = await axios.get(url, { headers: DESKTOP_HEADERS });
 
+    console.log("Response Data:",res.status)
     const $ = cheerio.load(res.data);
     const results = [];
 
-    $("div._75nlfW").each((_, el) => {
-        const title = $(el).find(".KzDlHZ").text().trim();
-        const price = $(el).find(".Nx9bqj._4b5DiR").text().trim();
-        const link = $(el).find("a.CGtC98").attr("href");
-        const image = $(el).find("img.DByuf4").attr("src");
+    $("div[data-id]").each((_, el) => {
+        const title = $(el).find(".RG5Slk").text().trim();
+        const price = $(el).find(".hZ3P6w.DeU9vF").text().trim();
+        const link = $(el).find("a").attr("href");
+        const image = $(el).find("img").attr("src");
 
         if (title && link) {
             results.push({
@@ -99,6 +99,7 @@ async function scrapeFlipkartRequest(query) {
     console.log("\n🔍 Searching Flipkart:", query);
 
     const list = await scrapeFlipkartSearch(query);
+
 
     // Filter out irrelevant products
     const filtered = list.filter(
@@ -214,65 +215,6 @@ function refreshSessionCookies() {
 
     console.log("✅ Session cookies refreshed");
 }
-
-// --------------------------------------------------------------
-// 🆕 REMOVE ALL FROM CART
-// --------------------------------------------------------------
-async function removeAllFromCart() {
-    try {
-        console.log("\n🗑️  Attempting to clear cart...");
-
-        const payload = {
-            pageUri: "/viewcart",
-            pageContext: {
-                trackingContext: {
-                    context: {
-                        action: "REMOVE_ALL"
-                    }
-                },
-                networkSpeed: 0,
-            },
-            locationContext: {
-                pincode: 201003,
-                changed: false,
-            },
-        };
-
-        await flipkartAPI.post("/api/4/cart/removeAll", payload);
-        console.log("✅ Cart cleared successfully");
-
-
-    } catch (err) {
-        console.log("⚠️  Cart clear attempt (may be already empty):", err.message);
-    }
-}
-
-// --------------------------------------------------------------
-// 🆕 ADD TO CART
-// --------------------------------------------------------------
-// async function addToCart(PID, LID) {
-//     try {
-//         console.log("\n🛒 Adding product to cart...");
-
-//         const payload = {
-//             productId: PID,
-//             listingId: LID,
-//             quantity: 1,
-//             context: {
-//                 pageType: "ProductPage",
-//             },
-//         };
-
-//         const res = await flipkartAPI.post("/api/4/cart/add", payload);
-//         console.log("✅ Product added to cart");
-//         return res.data;
-
-//     } catch (err) {
-//         console.log("⚠️  Add to cart error:", err.message);
-//         // Try alternative method
-//         return null;
-//     }
-// }
 
 
 async function checkout(PID, LID, price) {
@@ -434,7 +376,7 @@ export async function scrapeFlipkartFull(query) {
     try {
         stripRateLimitCookies();
         refreshSessionCookies();
-        await removeAllFromCart();
+        // await removeAllFromCart();
 
         const best = await scrapeFlipkartRequest(query);
         console.log("Best Flipkart Product:", best ? best : "None");
@@ -455,7 +397,7 @@ export async function scrapeFlipkartFull(query) {
         let finalOffers = [];
         // stripRateLimitCookies();
         const chk = await checkout(PID, LID, price);
-        console.log("Checkout result:", chk);
+        console.log("Checkout result:");
         if (chk != null) {
             grandTotal = chk?.RESPONSE?.orderSummary?.checkoutSummary?.grandTotal ?? price;
             // now offers discountPriceText - grandTotal and create final offers list
